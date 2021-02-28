@@ -1,8 +1,8 @@
 class Board:
     def __init__(self):
-        self.boardCon = [" ", " ", " ",
-                         " ", " ", " ",
-                         " ", " ", " "]
+        self.boardCon = ["a", "b", "c",
+                         "d", "e", "f",
+                         "g", "h", "i"]
         self.rows = self.__getRows()
         self.columns = self.__getColumns()
         self.diagonals = self.__getDiagonals()
@@ -23,10 +23,13 @@ class Board:
     
     
     def __getRows(self):
-        pass
+        rows = [self.boardCon[0:3], self.boardCon[3:6], self.boardCon[6:9]]
+        return rows
 
     def __getColumns(self):
-        pass
+        columns = [self.boardCon[0:7:3], self.boardCon[1:8:3], self.boardCon[2:9:3]]
+        return columns
 
     def __getDiagonals(self):
-        pass
+        diagonals = [self.boardCon[0:9:4], self.boardCon[6:0:-2]]
+        return diagonals
